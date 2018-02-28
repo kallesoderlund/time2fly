@@ -13,7 +13,7 @@ import { ResultPageComponent } from './resultPage/resultPage.component';
 import { FlightService } from './services/flight.service';
 import { FormComponent } from './forms/form.component';
 import { MessageService } from './services/message.service';
-import { BusyModule } from 'angular2-busy';
+import { NgBusyModule } from 'ng-busy';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -106,7 +106,7 @@ import { DataService } from './services/data.service';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    BusyModule,
+    NgBusyModule,
   ],
   providers: [FlightService, MessageService, FormBuilder, DataService],
   bootstrap: [AppComponent],
