@@ -1,0 +1,59 @@
+<div class="container">
+    <form #flightForm="ngForm" (ngSubmit)="onFormSubmit(flightForm)">
+        <div class="container" id="flightInput" flex align="center">
+            <div class="row" flex align="center">
+                <mat-form-field hideRequiredMarker>
+                    <input name="flight_number" matInput placeholder="Enter Flight number" ngModel required>
+                    <mat-hint align="start">Ex: SK123</mat-hint>
+                    <i class="material-icons" matSuffix>flight</i>
+                </mat-form-field>
+
+            </div>
+            <div class="row">
+
+                <mat-form-field hideRequiredMarker>
+                    <input matInput name="date" [matDatepicker]="picker" placeholder="Select a departure date" [min]="minDate" [max]="maxDate"
+                        (dateInput)="addEvent('input', $event)" ngModel required>
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                        <i class="material-icons">today</i>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+
+                    <mat-hint align="start">Can't be more than 5 days in advance</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="row" flex align="center">
+                <mat-form-field hideRequiredMarker>
+                    <input matInput name="address" placeholder="Your location" ngModel required>
+                    <i class="material-icons" matSuffix>gps_fixed</i>
+                </mat-form-field>
+
+            </div>
+        </div>
+        <div class="container transportContainer">
+            <div layout="row" flex align="left">
+                <mat-button-toggle-group name="transport_mode" ngModel required>
+                    <mat-button-toggle input type="radio" mat-fab value="driving">
+                        <i class="material-icons white-text">directions_car</i>
+                    </mat-button-toggle>
+                    <mat-button-toggle input type="radio" mat-fab value="taxi">
+                        <i class="material-icons white-text">local_taxi</i>
+                    </mat-button-toggle>
+                    <mat-button-toggle input type="radio" mat-fab value="transit">
+                        <i class="material-icons white-text">directions_train</i>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div class="checkBoxRow" flex align="left">
+                <mat-checkbox class="checkbox" name="bags" ngModel="true">I have luggage to check-in</mat-checkbox>
+            </div>
+        </div>
+        <div class="container confirmContainer">
+            <div layout="row" flex align="center">
+                <button md-button class="background-primary-color white-text" type="submit" mat-raised-button> When do I need to leave?</button>
+            </div>
+
+        </div>
+
+    </form>
+</div>

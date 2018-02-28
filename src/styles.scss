@@ -1,0 +1,404 @@
+
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+
+@include mat-core();
+
+$primary: mat-palette($mat-blue, 500);
+$accent:  mat-palette($mat-teal, 500, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+html, body {
+    font-family: $mat-font-family;
+    font-weight: normal;
+    background-color: rgb(74,144,226);
+    margin: 0;
+    height: 100%;
+    width:100%;
+
+    min-height: 100%;
+}
+
+.mainHeader{
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+.container-fluid {
+    background-color: rgb(133, 145, 159);
+    height: 27%;
+    /* Time to Fly: */
+    font-family: HelveticaNeue-Medium;
+    font-size: 42px;
+    color: #000000;
+    letter-spacing: -0.5px;
+    background-image: url('./assets/BgImg.png');
+    background-position:center center;
+    background-size: 642px, 397px;
+}
+
+
+.mat-button-toggle-group {
+    box-shadow:none;
+}
+
+.mat-checkbox {
+    margin-top: 20px;
+}
+
+.mat-button-toggle {
+    //background-color: rgb(71,138,217);
+    color: mat-color($primary, default-contrast);
+    box-shadow:none;
+  }
+
+  .mat-button-toggle-checked {
+    background-color: rgb(32,90,158);
+    color: rgb(32,90,158);
+  }
+
+.mat-raised-button {
+    background-color: rgb(253,138,37);
+    width: 100%;
+    height: 60px;
+    font-size: large;
+    color: white;
+    margin-top: 20px;
+    box-shadow: none;
+}
+
+
+.mat-form-field {
+    color: rgb( 164, 199, 238 );
+    width: 100%;
+    padding-left:20px;
+    padding-right:20px;
+    margin-top: 20px;
+}
+
+.mat-form-field label {
+    color:white;
+}
+
+.mat-input-element {
+    color: white;
+}
+
+.mat-input.focused label {
+    color:white;
+}
+
+.mat-form-field.input {
+    color: rgb( 164, 199, 238 );
+}
+
+.mat-icon {
+    color: rgb( 164, 199, 238 );
+}
+
+.mat-hint {
+    color: rgb( 164, 199, 238 );
+}
+
+.cdk-overlay-container{
+    width: 100%;
+    height: 100%;
+}
+
+.cdk-overlay-0{
+    width: inherit;
+}
+
+.mat-slide-toggle {
+    margin: 15 px;
+}
+
+.mat-input-underline {
+    background-color: rgb(255, 255, 255);
+        /* replace this color with your accent color hex code */
+}
+
+.fixed-bottom {
+    background-color: rgb(253,138,37);
+    padding-left: 45px;
+    /* To catch your flight: */
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    letter-spacing: 0;
+
+    /* Friday, 15 February: */
+    font-size: 14px;
+    letter-spacing: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    max-height: 27%;
+}
+
+.fixed-bottom .row .img {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#depTime {
+    font-family: HelveticaNeue;
+    font-size: 85px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.12);
+}
+
+.material-icons {
+    color: rgb( 164, 199, 238 );
+}
+
+.timeDetails{
+    background-color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+
+.flightSummary {
+    background-color: rgb(44,112,191);
+    color:white;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 20px;
+    /* Shape: */
+    /* SK 518: */
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    letter-spacing: 0;
+}
+
+.flightSummary mat-icon {
+    color: #FFFFFF;
+    margin-right: 5px; 
+}
+
+.mat-toolbar {
+    background-color: rgb(220,237,253)
+}
+
+.breakDownTime {
+    font-size: small;
+    color: rgb(125,125,125)
+}
+
+.timeDetailRow {
+    padding-left: 40px;
+}
+
+.detailHeader {
+    color: rgb(78,146,223)
+}
+
+.cdk-overlay-container  {
+    max-width: 100vw;
+}
+
+.backgroundImage {
+    content: "./assets/BgImg.png";
+    background-color: rgb(133, 145, 159);
+    height: 27%;
+    /* Time to Fly: */
+    font-family: HelveticaNeue-Medium;
+    font-size: 42px;
+    color: #000000;
+    letter-spacing: -0.5px;
+}
+
+.transportContainer {
+    margin-top: 20px;
+}
+
+.checkbox {
+    color: white;
+}
+
+.checkBoxRow {
+    margin-top:20px;
+}
+
+.confirmContainer {
+    margin-top: 20px;
+}
+
+.mat-toolbar .material-icons {
+    color: black;
+}
+
+.breakDownTime .material-icons {
+    color: rgb(127,127,127);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.ng-busy {
+    z-index: 1002;
+  }
+  .ng-busy,
+  .ng-busy > *,
+  .ng-busy > ng-component > * {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+  .ng-busy-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+    background: #fff;
+    opacity: .7;
+  }
+  .ng-busy-default-wrapper {
+    text-align: center;
+  }
+  .ng-busy-default-sign {
+    position: relative;
+    display: inline-block;
+    z-index: 1003;
+    padding: 12px 14px;
+    border: 1px solid #d8d8d8;
+    border-top: 0;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background: #f8f8f8;
+    color: #333;
+  }
+  .ng-busy-default-text {
+    display: inline-block;
+    margin-left: 6px;
+    max-width: 400px;
+    font-size: 14px;
+    text-align: left;
+  }
+  .ng-busy-default-spinner {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  .ng-busy-default-spinner div {
+    position: absolute;
+    left: 44.5%;
+    top: 37%;
+    width: 10%;
+    height: 26%;
+    background: #666;
+    border-radius: 50px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    -webkit-animation: busy-spinner-anim 1s linear infinite;
+            animation: busy-spinner-anim 1s linear infinite;
+  }
+  .ng-busy-default-spinner .bar1 {
+    -webkit-transform: rotate(0deg) translate(0, -142%);
+            transform: rotate(0deg) translate(0, -142%);
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s;
+  }
+  .ng-busy-default-spinner .bar2 {
+    -webkit-transform: rotate(30deg) translate(0, -142%);
+            transform: rotate(30deg) translate(0, -142%);
+    -webkit-animation-delay: -0.91666667s;
+            animation-delay: -0.91666667s;
+  }
+  .ng-busy-default-spinner .bar3 {
+    -webkit-transform: rotate(60deg) translate(0, -142%);
+            transform: rotate(60deg) translate(0, -142%);
+    -webkit-animation-delay: -0.83333333s;
+            animation-delay: -0.83333333s;
+  }
+  .ng-busy-default-spinner .bar4 {
+    -webkit-transform: rotate(90deg) translate(0, -142%);
+            transform: rotate(90deg) translate(0, -142%);
+    -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+  }
+  .ng-busy-default-spinner .bar5 {
+    -webkit-transform: rotate(120deg) translate(0, -142%);
+            transform: rotate(120deg) translate(0, -142%);
+    -webkit-animation-delay: -0.66666667s;
+            animation-delay: -0.66666667s;
+  }
+  .ng-busy-default-spinner .bar6 {
+    -webkit-transform: rotate(150deg) translate(0, -142%);
+            transform: rotate(150deg) translate(0, -142%);
+    -webkit-animation-delay: -0.58333333s;
+            animation-delay: -0.58333333s;
+  }
+  .ng-busy-default-spinner .bar7 {
+    -webkit-transform: rotate(180deg) translate(0, -142%);
+            transform: rotate(180deg) translate(0, -142%);
+    -webkit-animation-delay: -0.5s;
+            animation-delay: -0.5s;
+  }
+  .ng-busy-default-spinner .bar8 {
+    -webkit-transform: rotate(210deg) translate(0, -142%);
+            transform: rotate(210deg) translate(0, -142%);
+    -webkit-animation-delay: -0.41666667s;
+            animation-delay: -0.41666667s;
+  }
+  .ng-busy-default-spinner .bar9 {
+    -webkit-transform: rotate(240deg) translate(0, -142%);
+            transform: rotate(240deg) translate(0, -142%);
+    -webkit-animation-delay: -0.33333333s;
+            animation-delay: -0.33333333s;
+  }
+  .ng-busy-default-spinner .bar10 {
+    -webkit-transform: rotate(270deg) translate(0, -142%);
+            transform: rotate(270deg) translate(0, -142%);
+    -webkit-animation-delay: -0.25s;
+            animation-delay: -0.25s;
+  }
+  .ng-busy-default-spinner .bar11 {
+    -webkit-transform: rotate(300deg) translate(0, -142%);
+            transform: rotate(300deg) translate(0, -142%);
+    -webkit-animation-delay: -0.16666667s;
+            animation-delay: -0.16666667s;
+  }
+  .ng-busy-default-spinner .bar12 {
+    -webkit-transform: rotate(330deg) translate(0, -142%);
+            transform: rotate(330deg) translate(0, -142%);
+    -webkit-animation-delay: -0.08333333s;
+            animation-delay: -0.08333333s;
+  }
+  @-webkit-keyframes busy-spinner-anim {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.25;
+    }
+  }
+  @keyframes busy-spinner-anim {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.25;
+    }
+  }

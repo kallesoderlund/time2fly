@@ -1,0 +1,138 @@
+<div [ngBusy]="busy"></div>
+<mat-toolbar>
+    <div [ngBusy]="busy"></div>
+    <button mat-icon-button (click)="gotoMain()">
+        <i class="material-icons">arrow_back</i>
+    </button>
+    Time to Fly
+</mat-toolbar>
+<div>
+    <div class="container flightSummary">
+        <div class="row timeDetailRow">
+
+
+            <div class="row">
+                <mat-icon>flight takeoff</mat-icon>
+                <p>{{flight.flight_info.flight_number}} to {{flight.flight_info.arrival_destination}}</p>
+
+                <mat-icon style="margin-left: 10px;">today</mat-icon>
+                 {{flight.flight_info.departure_date}}
+            </div>
+
+
+        </div>
+        <div class="row timeDetailRow">
+
+            <div class="col-11">{{flight.input_data.origin}}</div>
+        </div>
+    </div>
+    <div layout="row" flex align="center">
+        <mat-button-toggle-group style="width:100%;" name="tranport_mode">
+            <mat-button-toggle style="width:33.3%;" input type="radio" mat-fab value="car">
+                <i class="material-icons">directions_car</i>
+            </mat-button-toggle>
+            <mat-button-toggle style="width:33.3%;" input type="radio" mat-fab value="taxi">
+                <i class="material-icons">local_taxi</i>
+            </mat-button-toggle>
+            <mat-button-toggle style="width:33.3%;" input type="radio" mat-fab value="transit">
+                <i class="material-icons">directions_train</i>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div class="container timeDetails">
+        <div class="row timeDetailRow">
+            <div class="col-12">
+                <div class="row">
+                    <span class="detailHeader">To the airport</span>
+                </div>
+                <div class="row">
+                    <b> {{flight.transport_info.duration.text}} </b>
+                </div>
+                <div class="row breakDownTime">
+                    <p>{{flight.input_data.origin}}</p>
+                    <i class="material-icons">arrow_forward</i>
+                    <p>Arlanda
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="container timeDetails">
+        <div class="row timeDetailRow">
+            <div class="col-8">
+                <div class="row">
+                    <span class="detailHeader">Inside the airport</span>
+                </div>
+                <div class="row">
+                    <b> {{timeThroughAirport}} min </b>
+                </div>
+            </div>
+            <div class="col-4" text-align="right">
+                <div class="row"> Departure </div>
+                <div class="row">
+                    <b>{{flight.flight_info.departure_time}}</b>
+                </div>
+            </div>
+        </div>
+        <div class="row timeDetailRow">
+            <div class="col-12">
+                <div class="row breakDownTime">
+                    Arlanda Airport
+                    <i class="material-icons">arrow_forward</i>
+                    Terminal {{flight.flight_info.terminal}}
+                    <i class="material-icons">arrow_forward</i>Gate {{flight.flight_info.gate}}
+                </div>
+                <div class="row breakDownTime">
+                    Check In: {{totalTimeCheckIn}} min
+                    <i class="material-icons">arrow_forward</i>
+                    Security: {{totalTimeSecurity}} min
+                    <i class="material-icons">arrow_forward</i>
+                    To gate: {{flight.time_to_gate}} min
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <mat-divider></mat-divider>
+    <div class="container timeDetails">
+        <div class="row timeDetailRow">
+            <p class="detailHeader">Extra time on the airport</p>
+        </div>
+        <div class="row timeDetailRow">
+
+            <mat-radio-group>
+                <mat-radio-button value="1">Not a lot</mat-radio-button>
+                <mat-radio-button value="2">Standard</mat-radio-button>
+                <mat-radio-button value="3">Plenty</mat-radio-button>
+            </mat-radio-group>
+
+        </div>
+    </div>
+    <!-- 
+    <div class="fixed-bottom">
+        <div class="container">
+            <div class="row">To catch your flight leave no later than </div>
+            <div class="row">
+                <h1 id="depTime" style=font-size:100px>{{flight.latest_leave_time}}</h1>
+            </div>
+            <div class="row">{{flight.latest_leave_date}}</div>
+        </div>
+    </div> -->
+    <div class="fixed-bottom">
+        <div class="row">
+            <img src="../assets/Combined Shape.png" style="height:25px;width:25px; margin-right:10px;">
+            <p>To catch your flight leave no later than</p>
+        </div>
+        <div class="row">
+            <h1 id="depTime" style=font-size:90px>{{flight.latest_leave_time}}</h1>
+        </div>
+        <div class="row">
+            <p style="margin-bottom: 20px;">{{flight.latest_leave_date}}</p>
+        </div>
+    </div>
+</div>
