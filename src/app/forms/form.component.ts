@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef  } from '@angular/core';
+import { Component, Input, forwardRef, OnInit  } from '@angular/core';
 import { FormBuilder, FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR  } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MatDatepicker } from '@angular/material/datepicker';
@@ -26,8 +26,9 @@ const moment = _rollupMoment || _moment;
     }
   ]
 })
-export class FormComponent implements ControlValueAccessor  {
+export class FormComponent implements ControlValueAccessor {
   minDate = new Date();
+  private bags: Boolean = true;
   maxDate = new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate() + 5);
   constructor(private flightService: FlightService,
     private router: Router,
@@ -37,16 +38,24 @@ export class FormComponent implements ControlValueAccessor  {
     _dateValue; // notice the '_'
     @Input() title: string;
 
+
   onFormSubmit(flightForm: NgForm) {
     const validFlight = flightForm.valid;
     flightForm.value.date = this.dateValue;
     const flight = JSON.stringify(flightForm.value);
+    console.log(flight);
 
     if (validFlight) {
       // this.getAllTextBox(flightFormResult);
       this.dataService.saveFormData(flightForm.value);
       this.goToResult();
     }
+  }
+
+  toggle(e) {
+    if (e.target.checked) {
+    }
+
   }
 
   goToResult() {

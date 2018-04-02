@@ -18,7 +18,7 @@ export class DataService {
     this.formData = formData;
   }
 
-  getFormData(): JSON {
+  getFormData(): any {
       return this.formData;
   }
 

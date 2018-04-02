@@ -12,13 +12,14 @@
             <div class="row">
 
                 <mat-form-field hideRequiredMarker>
+
                     <input matInput name="date" [matDatepicker]="picker" placeholder="Select a departure date" [min]="minDate" [max]="maxDate"
-                        (dateInput)="addEvent('input', $event)" ngModel required>
+                        (dateInput)="addEvent('input', $event)" ngModel required (click)="picker.open()">
                     <mat-datepicker-toggle matSuffix [for]="picker">
+
                         <i class="material-icons">today</i>
                     </mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-
                     <mat-hint align="start">Can't be more than 5 days in advance</mat-hint>
                 </mat-form-field>
             </div>
@@ -45,12 +46,12 @@
                 </mat-button-toggle-group>
             </div>
             <div class="checkBoxRow" flex align="left">
-                <mat-checkbox class="checkbox" name="bags" ngModel="true">I have luggage to check-in</mat-checkbox>
+                <mat-checkbox type="checkbox" name="bags" [(ngModel)]="bags" (change)="toggle($event)">I have luggage to check-in</mat-checkbox>
             </div>
         </div>
         <div class="container confirmContainer">
             <div layout="row" flex align="center">
-                <button md-button class="background-primary-color white-text" type="submit" mat-raised-button> When do I need to leave?</button>
+                <button class=" mat-raised-button background-primary-color white-text" type="submit" > When do I need to leave?</button>
             </div>
 
         </div>

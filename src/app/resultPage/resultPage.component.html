@@ -26,14 +26,14 @@
         </div>
     </div>
     <div layout="row" flex align="center">
-        <mat-button-toggle-group style="width:100%;" name="tranport_mode">
-            <mat-button-toggle style="width:33.3%;" input type="radio" mat-fab value="car">
+        <mat-button-toggle-group style="width:100%;" name="tranport_mode" value="{{flight.input_data.transport_mode}}">
+            <mat-button-toggle style="width:33.3%;" input type="radio" mat-fab value="driving" (click)="updateTransportMode('driving')">
                 <i class="material-icons">directions_car</i>
             </mat-button-toggle>
-            <mat-button-toggle style="width:33.3%;" input type="radio" mat-fab value="taxi">
+            <mat-button-toggle style="width:33.3%;" input type="radio" mat-fab value="taxi" (click)="updateTransportMode('taxi')">
                 <i class="material-icons">local_taxi</i>
             </mat-button-toggle>
-            <mat-button-toggle style="width:33.3%;" input type="radio" mat-fab value="transit">
+            <mat-button-toggle style="width:33.3%;" input type="radio" mat-fab value="transit" (click)="updateTransportMode('transit')">
                 <i class="material-icons">directions_train</i>
             </mat-button-toggle>
         </mat-button-toggle-group>
@@ -63,7 +63,7 @@
         <div class="row timeDetailRow">
             <div class="col-8">
                 <div class="row">
-                    <span class="detailHeader">Inside the airport</span>
+                    <span class="detailHeader">At the airport</span>
                 </div>
                 <div class="row">
                     <b> {{timeThroughAirport}} min </b>
@@ -89,7 +89,7 @@
                     <i class="material-icons">arrow_forward</i>
                     Security: {{totalTimeSecurity}} min
                     <i class="material-icons">arrow_forward</i>
-                    To gate: {{flight.time_to_gate}} min
+                    To gate: {{timeToGate}} min
                 </div>
             </div>
         </div>
@@ -104,25 +104,16 @@
         </div>
         <div class="row timeDetailRow">
 
-            <mat-radio-group>
-                <mat-radio-button value="1">Not a lot</mat-radio-button>
-                <mat-radio-button value="2">Standard</mat-radio-button>
-                <mat-radio-button value="3">Plenty</mat-radio-button>
+            <mat-radio-group [(ngModel)]="airportTime">
+                <mat-radio-button name="radioButtontimeOneAirport" [value]="1" (change)="timeOnAriportChange($event)" ng-checked="unchecked">Not a lot</mat-radio-button>
+                <mat-radio-button name="radioButtontimeOneAirport" [value]="2" (change)="timeOnAriportChange($event)" checked="checked">Standard</mat-radio-button>
+                <mat-radio-button name="radioButtontimeOneAirport" [value]="3" (change)="timeOnAriportChange($event)" >Plenty</mat-radio-button>
             </mat-radio-group>
 
         </div>
     </div>
-    <!-- 
-    <div class="fixed-bottom">
-        <div class="container">
-            <div class="row">To catch your flight leave no later than </div>
-            <div class="row">
-                <h1 id="depTime" style=font-size:100px>{{flight.latest_leave_time}}</h1>
-            </div>
-            <div class="row">{{flight.latest_leave_date}}</div>
-        </div>
-    </div> -->
-    <div class="fixed-bottom">
+
+    <div class="container" id="bottomDiv">
         <div class="row">
             <img src="../assets/Combined Shape.png" style="height:25px;width:25px; margin-right:10px;">
             <p>To catch your flight leave no later than</p>

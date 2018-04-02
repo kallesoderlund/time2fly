@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app.routing';
 import { ResultPageComponent } from './resultPage/resultPage.component';
 import { FlightService } from './services/flight.service';
 import { FormComponent } from './forms/form.component';
-import { MessageService } from './services/message.service';
 import { NgBusyModule } from 'ng-busy';
 import {
   MatAutocompleteModule,
@@ -86,8 +85,6 @@ import { DataService } from './services/data.service';
     MatDividerModule,
     MatExpansionModule,
     MatGridListModule,
-    MatIconModule,
-    MatInputModule,
     MatListModule,
     MatMenuModule,
     MatNativeDateModule,
@@ -108,7 +105,7 @@ import { DataService } from './services/data.service';
     MatTooltipModule,
     NgBusyModule,
   ],
-  providers: [FlightService, MessageService, FormBuilder, DataService],
+  providers: [FlightService, FormBuilder, DataService],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

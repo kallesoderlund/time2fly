@@ -5,7 +5,7 @@
 
 @include mat-core();
 
-$primary: mat-palette($mat-blue, 500);
+$primary: mat-palette($mat-blue, 50);
 $accent:  mat-palette($mat-teal, 500, A200, A400);
 $warn:    mat-palette($mat-red, 500);
 
@@ -17,11 +17,20 @@ html, body {
     font-family: $mat-font-family;
     font-weight: normal;
     background-color: rgb(74,144,226);
-    margin: 0;
+    margin: auto;
     height: 100%;
     width:100%;
-
+    max-width: 500px;
     min-height: 100%;
+}
+
+html {
+    background-color: rgb(228,242,253)
+}
+
+.content {
+    max-width: 500px;
+    margin: auto;
 }
 
 .mainHeader{
@@ -47,8 +56,8 @@ h1, h2, h3, h4 {
 }
 
 
-.mat-button-toggle-group {
-    box-shadow:none;
+.mat-button-toggle-group, .mat-button-toggle-standalone {
+    box-shadow: none;
 }
 
 .mat-checkbox {
@@ -62,8 +71,8 @@ h1, h2, h3, h4 {
   }
 
   .mat-button-toggle-checked {
-    background-color: rgb(32,90,158);
-    color: rgb(32,90,158);
+    background-color: rgb(40, 104, 176);
+    color: rgb(40, 104, 176);
   }
 
 .mat-raised-button {
@@ -143,10 +152,33 @@ h1, h2, h3, h4 {
     max-height: 27%;
 }
 
-.fixed-bottom .row .img {
+#bottomDiv .row .img {
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+#bottomDiv {
+    background-color: rgb(253,138,37);
+    padding-left: 45px;
+    /* To catch your flight: */
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    letter-spacing: 0;
+
+    /* Friday, 15 February: */
+    font-size: 14px;
+    letter-spacing: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    max-height: 27%;
+}
+
+#bottomDiv .row .img {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
 
 #depTime {
     font-family: HelveticaNeue;
@@ -222,7 +254,7 @@ p {
 }
 
 .transportContainer {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .checkbox {
